@@ -302,7 +302,8 @@ export default class Interface {
 
     // If you click Cookie settings and open modal
     Array.prototype.forEach.call(document.getElementsByClassName('ccb__edit'), (edit) => {
-      edit.addEventListener('click', () => {
+      edit.addEventListener('click', (e) => {
+        e.preventDefault();
         this.elements['modal'].classList.add('ccm--visible');
       });
     });
