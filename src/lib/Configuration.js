@@ -21,9 +21,9 @@ export default class Configuration {
       cookieVersion: 1,
       modalMainTextMoreLink: null,
       barTimeout: 1000,
-      showRejectAllButton: true,
+      showRejectAllButton: false,
       debug: false,
-      reloadOnSave: true,
+      reloadOnSave: false,
       theme: {
         barColor: '#2C7CBF',
         barTextColor: '#FFF',
