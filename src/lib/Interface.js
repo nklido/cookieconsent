@@ -1,5 +1,6 @@
 import { el, mount } from 'redom';
 import Language from './Language';
+import ScriptTagFilter from './ScriptTagFilter';
 import Utilities from "./Utilities";
 
 export default class Interface {
@@ -256,6 +257,8 @@ export default class Interface {
         }
         
         this.writeBufferToDOM();
+
+        this.scriptTagFilter();
   
         this.buildCookie((cookie) => {
           this.setCookie(cookie);
@@ -368,6 +371,8 @@ export default class Interface {
 
       this.writeBufferToDOM();
 
+      this.scriptTagFilter();
+
     });
   }
 
@@ -389,6 +394,11 @@ export default class Interface {
     if (window.CookieConsent.config.reloadOnSave) {
       location.reload();
     }
+  }
+
+  scriptTagFilter(){
+    const scriptTagFilter = new ScriptTagFilter();
+    scriptTagFilter.init();
   }
 
   buildCookie(callback) {
