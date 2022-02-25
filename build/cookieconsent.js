@@ -2892,7 +2892,9 @@ function () {
       }
 
       Array.prototype.forEach.call(document.getElementsByClassName('ccb__edit'), function (edit) {
-        edit.addEventListener('click', function () {
+        edit.addEventListener('click', function (e) {
+          e.preventDefault();
+
           _this.elements['modal'].classList.add('ccm--visible');
         });
       }); // If you click trough the tabs on Cookie settings
@@ -3103,9 +3105,9 @@ function () {
       cookieVersion: 1,
       modalMainTextMoreLink: null,
       barTimeout: 1000,
-      showRejectAllButton: true,
+      showRejectAllButton: false,
       debug: false,
-      reloadOnSave: true,
+      reloadOnSave: false,
       theme: {
         barColor: '#2C7CBF',
         barTextColor: '#FFF',
